@@ -5,20 +5,20 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.vectect.Base.BaseUITest;
 
-public class UITest extends BaseUITest {
+public class YouTubeUITest extends BaseUITest {
     private static String songTitle = "Jana - Barabar - (Audio 2001)";
     private YouTubePage youTube;
 
     @Test
     public void verifySongSearch() throws InterruptedException {
         youTube = new YouTubePage(getDriver());
-        Thread.sleep(1000);
+        pause();
         youTube.fillSearchBar(songTitle);
-        Thread.sleep(1000);
+        pause();
         youTube.clickOnSearchButton();
-        Thread.sleep(1000);
+        pause();
         youTube.clickOnFirstSearchResult();
-        Thread.sleep(20000); // pause for ads
+        pause(20000, "Waith for ads to finish");
         Assert.assertEquals(youTube.getVideoTitle(), songTitle);
     }
 }

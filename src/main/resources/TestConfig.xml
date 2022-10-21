@@ -2,7 +2,7 @@
 <suite name="UISuite" verbose="1" >
   <test name="UITest">
     <classes>
-      <class name="UITest.UITest"/>
+      <class name="UITest.YouTubeUITest"/>
     </classes>
   </test>
 </suite>
