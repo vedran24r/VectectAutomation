@@ -6,11 +6,12 @@ import org.testng.annotations.Test;
 import org.vectect.Base.BaseUITest;
 
 public class UITest extends BaseUITest {
-    String songTitle = "Jana - Barabar - (Audio 2001)";
+    private static String songTitle = "Jana - Barabar - (Audio 2001)";
+    private YouTubePage youTube;
 
     @Test
     public void verifySongSearch() throws InterruptedException {
-        YouTubePage youTube = new YouTubePage(getDriver());
+        youTube = new YouTubePage(getDriver());
         Thread.sleep(1000);
         youTube.fillSearchBar(songTitle);
         Thread.sleep(1000);

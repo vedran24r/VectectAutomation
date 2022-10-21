@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
-public class BaseUITest {
+public class BaseUITest extends BaseTest {
     private WebDriver driver;
 
     @BeforeSuite
