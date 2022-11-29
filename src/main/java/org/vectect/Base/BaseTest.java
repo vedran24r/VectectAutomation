@@ -1,8 +1,5 @@
 package org.vectect.Base;
 
-import java.util.concurrent.Flow;
-import java.util.function.Predicate;
-
 public class BaseTest {
 
 

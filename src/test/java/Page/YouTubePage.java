@@ -23,8 +23,8 @@ public class YouTubePage extends BasePage {
     @FindBy(xpath = "//body/ytd-app[1]/div[1]/ytd-page-manager[1]/ytd-search[1]/div[1]/ytd-two-column-search-results-renderer[1]/div[2]/div[1]/ytd-section-list-renderer[1]/div[2]/ytd-item-section-renderer[1]/div[3]/ytd-video-renderer[1]")
     private WebElement firstSearchResult; //temporary, create an element list
 
-    @FindBy()
-    private List<WebElement> results;
+    @FindBy(className = "ytd-video-renderer")
+    private List<WebElement> videoResults;
 
     @FindBy(xpath = "//*[@id=\"container\"]/h1/yt-formatted-string")
     private WebElement videoTitle;
@@ -39,7 +39,10 @@ public class YouTubePage extends BasePage {
         searchButton.click();
     }
 
-    public void clickOnFirstSearchResult() {
-        firstSearchResult.click();
+    public void clickOnFirstSearchResult() {firstSearchResult.click();} //temporary, create an element list
+
+    public void clickOnSearchResultByIndex(int index) {
+        videoResults.get(index).click();
     }
+
 }

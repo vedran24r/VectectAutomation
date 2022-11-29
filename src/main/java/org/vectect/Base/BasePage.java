@@ -18,8 +18,8 @@ public class BasePage {
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
-        // wait = new WebDriverWait(driver, Duration.ofMillis(500), Duration.ofMillis(500));
         PageFactory.initElements(new AjaxElementLocatorFactory(driver, 1), this);
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
     @BeforeSuite
@@ -27,7 +27,7 @@ public class BasePage {
         WebDriverManager.chromedriver().setup();
     }
 
-    public void waitForPageToSettle(By locator) {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    public void waitForPageToSettle(WebElement webElement) {
+        wait.until(ExpectedConditions.visibilityOf(webElement));
     }
 }
