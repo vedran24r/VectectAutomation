@@ -1,7 +1,6 @@
 package UITest;
 
 import Page.YouTubePage;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.vectect.Base.BaseUITest;
 
